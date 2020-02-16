@@ -3,6 +3,7 @@ const handlebars = require('express-handlebars');
 
 const app = express();
 
+//Set Route folders for all gets and Posts
 app.use('/gets', getsRoute);
 app.use('/posts', postsRoute);
 
@@ -13,13 +14,10 @@ app.engine('handlebars', handlebars({
     }));
 app.set('view engine', 'handlebars');
 
-
-
-
-
-//routes
+//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
 app.get('/', (req,res) => {
-    res.send('Chicago Crime Analyst Team Project');    
+    //res.render('main', {crimes: cdata});
+    res.render('main', {layout : 'index'});   
 });
 
 // lisgerner
