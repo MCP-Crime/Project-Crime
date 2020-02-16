@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MCP-Crime/Project-Crime/issues"
   },
-  "homepage": "https://github.com/MCP-Crime/Project-Crime#readme"
+  "homepage": "https://github.com/MCP-Crime/Project-Crime#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
