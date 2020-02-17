@@ -4,6 +4,10 @@ const bodyparser = require('body-parser');
 
 const app = express();
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const PORT = process.env.PORT || 3000;
+
 //Import post routes
 //const postsRoute = require('./routes/posts');
 //Import gets routes
@@ -29,4 +33,7 @@ app.get('/', (req,res) => {
 });
 
 // lisgerner
-app.listen(3000);
+//app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
