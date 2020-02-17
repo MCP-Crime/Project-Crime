@@ -1,11 +1,19 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
+const bodyparser = require('body-parser');
 
 const app = express();
 
+//Import post routes
+//const postsRoute = require('./routes/posts');
+//Import gets routes
+//const getsRoute = require('./routes/gets');
+
+//middleware
+app.use(bodyparser.json());
 //Set Route folders for all gets and Posts
-app.use('/gets', getsRoute);
-app.use('/posts', postsRoute);
+//app.use('/gets', getsRoute);
+//app.use('/posts', postsRoute);
 
 //Handlebar engine
 //Sets handlebars configurations
