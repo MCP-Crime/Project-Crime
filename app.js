@@ -1,6 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyparser = require('body-parser');
+const connectDB = require('./public/db');
 
 const app = express();
 
@@ -31,6 +32,9 @@ app.get('/', (req,res) => {
     //res.render('main', {crimes: cdata});
     res.render('main', {layout : 'index'});   
 });
+
+// Connect to database
+connectDB();
 
 // lisgerner
 //app.listen(3000);

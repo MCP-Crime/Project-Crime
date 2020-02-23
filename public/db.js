@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect('mongodb://drabick:Tron1414!@ds035448.mlab.com:35448/mcp13', {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
