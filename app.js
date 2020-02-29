@@ -5,6 +5,8 @@ const connectDB = require('./public/db');
 
 const app = express();
 
+app.use(express.static(__dirname + '/public'));
+
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 3000;

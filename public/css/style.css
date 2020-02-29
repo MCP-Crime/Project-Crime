@@ -1,0 +1,57 @@
+*{
+    background-image: url("../images/background.jpg");
+    color: white;
+}
+#mainHead{
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+}
+#headSpan{
+    margin-left: 10px;
+}
+#homeLogo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+form {
+    background-color: #FFF;
+    height: 20px;
+    margin-right: auto;
+    margin-left: 25%;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px;
+    text-align:center;
+}
+label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    height: 20px;
+    width: 200px;
+    margin-top: 3%;
+    margin-left: 10px;
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+input[type=text] {
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 3%;
+    float: left;
+}
+input[type=submit] {
+    height: 20px;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid #000;
+    margin-top: 3%;
+    margin-left: 20px;
+    float: left;
+}
