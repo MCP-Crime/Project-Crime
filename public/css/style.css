@@ -46,7 +46,7 @@ input[type=text] {
     margin-top: 3%;
     float: left;
 }
-input[type=submit] {
+#btnBlockNameSubmit {
     height: 20px;
     width: 100px;
     cursor: pointer;

@@ -1,11 +1,11 @@
 <h2 id="mainHead">
     <img src="/images/homeLogo.jpg" id="homeLogo" alt="Crime Logo"><span id="headSpan">Chicago Crime Data</span>
 </h2>
-<form name="Form" action="" method="GET" onsubmit="return getRequestedCrimeData()">
+<form name="Form">
     <div class="form-group">
-        <label for="searchStreet">Street Name :</label>
-        <input type="text" name="searchStreet" placeholder="Enter Street Name.." id="streetNameSearch"/>
-        <input type="submit" name="Submit" id="btnStreetNameSubmit" />
+        <label for="searchBlock">Block Name :</label>
+        <input type="text" name="searchBlock" placeholder="Enter Block Name.." id="blockNameSearch"/>
+        <button type="button" name="Submit" id="btnBlockNameSubmit" onclick="SearchStreet()">Submit</button>
     </div>
 </form>
 <h3>Most recent crimes:</h3>
@@ -13,15 +13,6 @@
   <tr>
     <td>
        <table class="tableDisp" id="recentCrimesTable" overflow="auto" cellspacing="0" cellpadding="1" border="1" width="100%" >
-         <tr style="color:white;background-color:grey">
-            <th>S No.</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Block</th>
-            <th>Crime</th>
-            <th>Crime Description</th>
-            <th>Location Description</th>
-         </tr>
        </table>
     </td>
   </tr>
