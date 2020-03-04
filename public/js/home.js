@@ -10,28 +10,32 @@ function generateTable(data){
     $('#recentCrimesTable').html('');
 
     $('#recentCrimesTable').append(
-        $('<tr>').attr({"style" : "color:white;background-color:grey"}).append(
-            $('<th>').append("S.No.")
-        ).append(
-            $('<th>').append("Date")
-        ).append(
-            $('<th>').append("Time")
-        ).append(
-            $('<th>').append("Block")
-        ).append(
-            $('<th>').append("Crime Type")
-        ).append(
-            $('<th>').append("Crime Description")
-        ).append(
-            $('<th>').append("Location Description")
+        $('<thead>').append(
+            $('<tr>').attr({"style" : "color:white;background-color:grey"}).append(
+                $('<th>').append("S.No.")
+            ).append(
+                $('<th>').append("Date")
+            ).append(
+                $('<th>').append("Time")
+            ).append(
+                $('<th>').append("Block")
+            ).append(
+                $('<th>').append("Crime Type")
+            ).append(
+                $('<th>').append("Crime Description")
+            ).append(
+                $('<th>').append("Location Description")
+            )
         )
+    ).append(
+        $('<tbody>').attr("id", "recentCrimesTableBody")
     );
 
     for(var i=0; i<data.length; i++){
         var date = moment(data[i].date).format("YYYY-MM-DD");
         var time = moment(data[i].date).format("HH:mm"); 
 
-        $('#recentCrimesTable').append(
+        $('#recentCrimesTableBody').append(
             $('<tr>').append(
                 $('<td>').append(
                     i+1
