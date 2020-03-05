@@ -22,6 +22,8 @@ app.use(bodyparser.json());
 //app.use('/gets', getsRoute);
 //app.use('/posts', postsRoute);
 
+//Added PM2 - to monitor server and linked to PM2.IO
+
 //Handlebar engine
 //Sets handlebars configurations
 app.engine('handlebars', handlebars({
