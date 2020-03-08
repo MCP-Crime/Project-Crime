@@ -1,6 +1,6 @@
 function getCrimesLatestData(callback){
     $.ajax({
-        url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?$select=date,block,primary_type,description,location_description", //"https://data.cityofchicago.org/resource/crimes.json",
+        url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?", //$select=date,block,primary_type,description,location_description",
         method: "GET",
         data: {
             "$limit" : 200,
@@ -48,6 +48,23 @@ function searchByCrimeType(crimeType, callback){
         }
     });
 }
+
+// function searchByDate(dateOfCrime, callback){
+//     $.ajax({
+//         url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?$where=date like" + " '%25" + dateOfCrime + "%25'",
+//         method: "GET",
+//         data: {
+//             "$limit" : 200,
+//             "$$app_token" : "4LSXHra0DVbTUwNPgC4whpMzH"
+//         },
+//         success: function (data) {
+//             callback(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     });
+// }
 
 // function getCrimesLatestData(callback){
 //     $.ajax({

@@ -69,7 +69,7 @@ function generateTable(data){
     }
 }
 
-function searchStreet(){
+function searchByStreet(){
     let isValid = true, message;
 
     if($('#blockNameSearch').val() == ""){
@@ -122,3 +122,19 @@ function searchByCrime(){
     }
     return isValid;
 }
+
+// function searchByYear(){
+//     alert();
+//     let convertedDate = ($('#searchByYear').val()).toISOString();
+//     console.log(convertedDate);
+//     searchByDate(convertedDate, function(data){
+//         if(data != "" && data.length != 0){
+//             console.log(data);
+//             generateTable(data);
+//         }
+//         else{
+//             alert("No data found. Try another block..");
+//             isValid = false;
+//         }
+//     });
+// }
