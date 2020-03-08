@@ -69,7 +69,7 @@ function generateTable(data){
     }
 }
 
-function SearchStreet(){
+function searchStreet(){
     let isValid = true, message;
 
     if($('#blockNameSearch').val() == ""){
@@ -79,6 +79,33 @@ function SearchStreet(){
     
     if(isValid){
         searchByBlock($('#blockNameSearch').val(), function(data){
+            if(data != "" && data.length != 0){
+                console.log(data);
+                generateTable(data);
+            }
+            else{
+                alert("No data found. Try another block..");
+                isValid = false;
+            }
+        });
+    }
+    else{
+        alert(message);
+        isValid = false;
+    }
+    return isValid;
+}
+
+function searchByCrime(){
+    let isValid = true, message;
+
+    if($('#crimeTypeSelect').val() == ""){
+        message = "Please select crime type!!";
+        isValid = false;
+    }
+    
+    if(isValid){
+        searchByCrimeType($('#crimeTypeSelect').val(), function(data){
             if(data != "" && data.length != 0){
                 console.log(data);
                 generateTable(data);
