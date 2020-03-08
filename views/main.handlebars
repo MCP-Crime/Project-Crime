@@ -6,11 +6,10 @@
     <div class="form-group grid-item">
         <label for="searchBlock">Search By Block Name :</label>
         <input type="text" name="searchBlock" placeholder="Enter Block Name.." id="blockNameSearch"/>
-        <button type="button" name="Submit" id="btnBlockNameSubmit" onclick="searchStreet()">Submit</button>
+        <button type="button" name="Submit" id="btnBlockNameSubmit" onclick="searchByStreet()">Search</button>
     </div>
     <div class="form-group grid-item">
         <label for="crimeTypeSelect">Search By Crime Type:</label>
-
         <select id="crimeTypeSelect">
           <option value="">--Select from below--</option>
           <option value="THEFT">THEFT</option>
@@ -30,14 +29,13 @@
           <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION </option>
           <option value="OTHER OFFENSE">OTHER OFFENSE</option>
         </select>
-
         <button type="button" name="Submit" id="btnCrimeTypeSubmit" onclick="searchByCrime()">Search</button>
     </div>
-    <div class="form-group grid-item">
+    <!--<div class="form-group grid-item">
         <label for="searchByYear">Search By Year:</label>
-        <input type="month" id="searchByYear" name="searchByYear" min="1900-01" value="2020-01">
-        <button type="button" name="Submit" id="btnYearSubmit" onclick="SearchByYear()">Submit</button>
-    </div>
+        <input type="month" id="searchByYear" name="searchByYear" min="1900-01" value="2020-01" />
+        <button type="button" name="Submit" id="btnYearSubmit" onclick="searchByYear()">Search</button>
+    </div>-->
   </div>
 </form>
 <h3>Most recent crimes:</h3>
