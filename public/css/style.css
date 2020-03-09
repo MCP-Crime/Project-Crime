@@ -86,3 +86,4 @@ select option{
     color:black;
     background-color: white;
 }
+#recentCrimesTableBody tr:nth-child(even){background-color: gray}
