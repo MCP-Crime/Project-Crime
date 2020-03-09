@@ -11,7 +11,7 @@ function generateTable(data){
 
     $('#recentCrimesTable').append(
         $('<thead>').append(
-            $('<tr>').attr({"style" : "color:white;background-color:grey"}).append(
+            $('<tr>').append(
                 $('<th>').append("S.No.")
             ).append(
                 $('<th>').append("Date")
