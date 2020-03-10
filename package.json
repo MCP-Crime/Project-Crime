@@ -4,7 +4,8 @@
   "description": "ITMD 567 Team Project Crime Analysis Inital Clone 2/15/2020",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
