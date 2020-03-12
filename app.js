@@ -4,7 +4,8 @@ const bodyparser = require('body-parser');
 const connectDB = require('./public/db');
 
 const app = express();
-require('dotenv/config');
+
+require('dotenv').config()
 
 app.use(express.static(__dirname + '/public'));
 
