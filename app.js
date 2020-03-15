@@ -13,18 +13,8 @@ app.use(express.static(__dirname + "/public"));
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 3000;
 
-//Import post routes
-//const postsRoute = require('./routes/posts');
-//Import gets routes
-//const getsRoute = require('./routes/gets');
-
 //middleware
 app.use(bodyparser.json());
-//Set Route folders for all gets and Posts
-//app.use('/gets', getsRoute);
-//app.use('/posts', postsRoute);
-
-//Added PM2 - to monitor server and linked to PM2.IO
 
 //Handlebar engine
 //Sets handlebars configurations
