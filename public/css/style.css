@@ -128,14 +128,11 @@ table {
 	border-spacing: 0;
 }
 
-/*-------------------------------------------------------*/
-
+/*-------------------------------------------------------
+/*Main Header formating
+*/
 * {
 	box-sizing: border-box;
-}
-
-.main {
-	padding-top: 50px;
 }
 
 header {
@@ -160,7 +157,13 @@ header {
 	padding-top: 10px;
 }
 
-/*-------------------------------------------------------*/
+/*--------------------------------------------------------
+Main Body Formating
+*/
+
+.main {
+	padding-top: 50px;
+}
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
