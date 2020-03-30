@@ -22,6 +22,10 @@ app.use("/posts", postsRoute);
 
 app.use(express.static(__dirname + "/public"));
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const PORT = process.env.PORT || 3000;
+
 //Handlebar engine
 //Sets handlebars configurations (we will go through them later on)
 app.engine(
