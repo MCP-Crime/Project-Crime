@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
 const handlebars = require("express-handlebars");
-const connectDB = require("./db");
+const connectDB = require("./lib/db");
 const cr = require("./lib/streetData");
 
 const app = express();
