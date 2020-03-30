@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
 const handlebars = require("express-handlebars");
-const connectDB = require("./db");
+const connectDB = require("./lib/db");
 const cr = require("./lib/streetData");
 
 const app = express();
@@ -21,6 +21,10 @@ app.use("/gets", getsRoute);
 app.use("/posts", postsRoute);
 
 app.use(express.static(__dirname + "/public"));
+
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const PORT = process.env.PORT || 3000;
 
 //Handlebar engine
 //Sets handlebars configurations (we will go through them later on)
