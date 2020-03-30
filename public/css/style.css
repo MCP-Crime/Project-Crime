@@ -1,89 +1,204 @@
-*{
-    background-image: url("../images/background.jpg");
-    color: white;
-}
-#mainHead{
-    text-align: center;
-    font-size: 50px;
-    margin: 0px;
-}
-#headSpan{
-    margin-left: 10px;
-}
-#homeLogo{
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-}
-form {
-    background-color: #FFF;
-    height: 20px;
-    margin-right: auto;
-    margin-left: 15%;
-    margin-top: 0px;
-    margin-bottom: 70px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0px;
-    text-align:center;
-}
-label {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 18px;
-    height: 20px;
-    width: 200px;
-    margin-top: 3%;
-    text-align: left;
-    clear: both;
-    float:left;
-}
-input[type=text], select, input[type=month] {
-    height: 20px;
-    width: 300px;
-    border: 1px solid #000;
-    margin-top: 3%;
-    float: left;
-}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-#btnBlockNameSubmit, #btnCrimeTypeSubmit, #btnYearSubmit{
-    height: 20px;
-    width: 100px;
-    cursor: pointer;
-    border: 1px solid #000;
-    margin-top: 3%;
-    margin-left: 20px;
-    float: left;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
 table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    overflow: auto;
-}
-  
-table td, table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    overflow: auto;
-}
-#tableArea{
-    height: 400px;
-    overflow: auto;
-}
-.grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.grid-item {
-    padding: 0px;
-    font-size: 30px;
-    /* text-align: center; */
+/*-------------------------------*/
+
+* {
+	box-sizing: border-box;
 }
-select option{
-    color:black;
-    background-color: white;
+
+.main {
+	padding-top: 110px;
 }
-#recentCrimesTableBody tr:nth-child(even){background-color: gray}
+
+header {
+	width: 100%;
+	height: 100px;
+	position: fixed;
+	background: #333;
+	color: #fff;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+	float: left;
+	width: 25%;
+	padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+	margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+/* Style the counter cards */
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	text-align: center;
+	background-color: #f1f1f1;
+}
+
+/*---------------------------------------------------*/
+
+.container {
+	width: 80%;
+	margin: 0 auto; /* Center the DIV horizontally */
+}
+.fixed-footer {
+	width: 100%;
+	position: fixed;
+	background: #333;
+	padding: 10px 0;
+	color: #fff;
+}
+.fixed-footer {
+	bottom: 0;
+}
