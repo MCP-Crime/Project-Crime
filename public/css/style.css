@@ -128,7 +128,7 @@ table {
 	border-spacing: 0;
 }
 
-/*-------------------------------*/
+/*-------------------------------------------------------*/
 
 * {
 	box-sizing: border-box;
@@ -145,6 +145,22 @@ header {
 	background: #333;
 	color: #fff;
 }
+
+.main-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-header h1 {
+	padding-left: 40px;
+}
+
+.main-header form {
+	padding-top: 10px;
+}
+
+/*-------------------------------------------------------*/
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -198,7 +214,10 @@ body {
 	background: #333;
 	padding: 10px 0;
 	color: #fff;
-}
-.fixed-footer {
 	bottom: 0;
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

@@ -9,23 +9,23 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<header>
-  <h1>Chicago Crimes</h1>
-  <div id='search'>
+<header class='main-header'>
+  <!--<img src="/images/chiskyline.jpg" alt="Chicago"> -->
+  <div>
+    <h1>Chicago Crime Analysis</h1>
     <form action="/gets/street" method="get">
-      <label for="fname">Enter Streety:</label><br>
-      <input type="text" id="street" name="street" value=""><br>
+      <label id='lsearch' for="fname">Enter Street:</label>
+      <input id='searchstreet' type="text" id="street" name="street" value="">
       <input type="submit" value="Submit">
     </form>
   </div>
-  <img src="/images/chiskyline.jpg" alt="Chicago">
 </header>
 
 <body>
   {{{body}}}
 
   <div class="fixed-footer">
-    <div class="container">ITMD-567 Team MCP (c)2020</div>
+    <div class="container">ITMD-567 Team MCP</div>
   </div>
 
 </body>
