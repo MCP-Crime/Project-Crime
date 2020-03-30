@@ -1,35 +1,35 @@
 <h2 id="mainHead">
-    <img src="/images/homeLogo.jpg" id="homeLogo" alt="Crime Logo"><span id="headSpan">Chicago Crime Data</span>
+  <img src="/images/homeLogo.jpg" id="homeLogo" alt="Crime Logo"><span id="headSpan">Chicago Crime Data</span>
 </h2>
 <form name="Form">
   <div class="grid-container">
     <div class="form-group grid-item">
-        <label for="searchBlock">Search By Block Name :</label>
-        <input type="text" name="searchBlock" placeholder="Enter Block Name.." id="blockNameSearch"/>
-        <button type="button" name="Submit" id="btnBlockNameSubmit" onclick="searchByStreet()">Search</button>
+      <label for="searchBlock">Search By Block Name :</label>
+      <input type="text" name="searchBlock" placeholder="Enter Block Name.." id="blockNameSearch" />
+      <button type="button" name="Submit" id="btnBlockNameSubmit" onclick="searchByStreet()">Search</button>
     </div>
     <div class="form-group grid-item">
-        <label for="crimeTypeSelect">Search By Crime Type:</label>
-        <select id="crimeTypeSelect">
-          <option value="">--Select from below--</option>
-          <option value="THEFT">THEFT</option>
-          <option value="BATTERY">BATTERY</option>
-          <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
-          <option value="NARCOTICS">NARCOTICS</option>
-          <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
-          <option value="ASSAULT">ASSAULT</option>
-          <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
-          <option value="BURGLARY">BURGLARY</option>
-          <option value="HOMICIDE">HOMICIDE</option>
-          <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
-          <option value="CRIM SEXUAL ASSAULT">CRIM SEXUAL ASSAULT</option>
-          <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
-          <option value="ROBBERY">ROBBERY</option>
-          <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
-          <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION </option>
-          <option value="OTHER OFFENSE">OTHER OFFENSE</option>
-        </select>
-        <button type="button" name="Submit" id="btnCrimeTypeSubmit" onclick="searchByCrime()">Search</button>
+      <label for="crimeTypeSelect">Search By Crime Type:</label>
+      <select id="crimeTypeSelect">
+        <option value="">--Select from below--</option>
+        <option value="THEFT">THEFT</option>
+        <option value="BATTERY">BATTERY</option>
+        <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+        <option value="NARCOTICS">NARCOTICS</option>
+        <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+        <option value="ASSAULT">ASSAULT</option>
+        <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+        <option value="BURGLARY">BURGLARY</option>
+        <option value="HOMICIDE">HOMICIDE</option>
+        <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+        <option value="CRIM SEXUAL ASSAULT">CRIM SEXUAL ASSAULT</option>
+        <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+        <option value="ROBBERY">ROBBERY</option>
+        <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+        <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION </option>
+        <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+      </select>
+      <button type="button" name="Submit" id="btnCrimeTypeSubmit" onclick="searchByCrime()">Search</button>
     </div>
     <!--<div class="form-group grid-item">
         <label for="searchByYear">Search By Year:</label>
@@ -37,15 +37,14 @@
         <button type="button" name="Submit" id="btnYearSubmit" onclick="searchByYear()">Search</button>
     </div>-->
   </div>
-</form>
-<h3>Most recent crimes:</h3>
-<div id="tableArea">
-  <table cellspacing="0" cellpadding="0" border="0" width="100%">
-    <tr>
-      <td>
-        <table class="tableDisp" id="recentCrimesTable" overflow="auto" cellspacing="0" cellpadding="1" border="1" width="100%" >
-        </table>
-      </td>
-    </tr>
-  </table>
-</div>
+  <div class="main">
+    {{#each crimes}}
+    <div class="column">
+      <div class="card">
+        <h3>{{this.primary_type}}</h3>
+        <p>{{this.block}}</p>
+        <p>{{this.date}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>

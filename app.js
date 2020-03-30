@@ -43,7 +43,7 @@ app.get("/", async (req, res) => {
 		//this will eventually be handled by your error handling middleware
 		next(e);
 	}
-	res.render("main2", { crimes: cdata });
+	res.render("main", { crimes: cdata });
 });
 
 // Connect to database
