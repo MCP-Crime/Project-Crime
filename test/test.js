@@ -16,7 +16,7 @@ describe("MongoDb Connection", function() {
 	});
 });
 
-describe("Get inital crimes", () => {
+ddescribe("Get inital crimes", () => {
 	//this.timeout(4000); // 4000ms = 4 seconds
 	it("Should get inital crimes", async () => {
 		await fetch(
@@ -24,10 +24,10 @@ describe("Get inital crimes", () => {
 		)
 			.then((res) => {
 				return res.json();
-			}).timeout(4000);
+			})
 			.then((res) => {
 				console.log(res);
 				assert.equal(res.ok);
-			})
+			});
 	});
 });
