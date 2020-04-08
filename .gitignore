@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 models/crimeData.js
 models/searchHistory.js
 node_modules/.bin/acorn

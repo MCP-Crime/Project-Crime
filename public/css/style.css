@@ -151,10 +151,16 @@ header {
 
 .main-header h1 {
 	padding-left: 40px;
+	margin-top: 10px;
 }
 
 .main-header form {
 	padding-top: 10px;
+	margin-top: 10px;
+}
+
+input[type="text"], input[type="number"], select{
+	width: 160px;
 }
 
 /*--------------------------------------------------------
@@ -162,7 +168,7 @@ Main Body Formating
 */
 
 .main {
-	padding-top: 50px;
+	padding-top: 100px;
 }
 
 body {

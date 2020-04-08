@@ -12,11 +12,38 @@
 <header class='main-header'>
   <!--<img src="/images/chiskyline.jpg" alt="Chicago"> -->
   <div>
-    <h1>Chicago Crime Analysis</h1>
+    <h1 class="main-header">Chicago Crime Analysis</h1>
     <form action="/gets/street" method="get">
-      <label id='lsearch' for="fname">Enter Street:</label>
+      <label for="street">Enter Street:</label>
       <input id='searchstreet' type="text" id="street" name="street" value="">
+      <input type="submit" value="Submit" onclick="getStreetData()">
+
+      <label for="date">Select Date:</label>
+      <input id='date' type="number" min="1900" max="2099" step="1" />
       <input type="submit" value="Submit">
+
+      <label for="crimeTypeSelect">Search By Crime Type:</label>
+      <select id="crimeTypeSelect">
+        <option value="">--Select from below--</option>
+        <option value="THEFT">THEFT</option>
+        <option value="BATTERY">BATTERY</option>
+        <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+        <option value="NARCOTICS">NARCOTICS</option>
+        <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+        <option value="ASSAULT">ASSAULT</option>
+        <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+        <option value="BURGLARY">BURGLARY</option>
+        <option value="HOMICIDE">HOMICIDE</option>
+        <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+        <option value="CRIM SEXUAL ASSAULT">CRIM SEXUAL ASSAULT</option>
+        <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+        <option value="ROBBERY">ROBBERY</option>
+        <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+        <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION </option>
+        <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+      </select>
+      <button type="button" name="Submit" id="btnCrimeTypeSubmit" onclick="searchByCrime()">Search</button>
+
     </form>
   </div>
 </header>
