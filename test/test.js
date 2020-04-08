@@ -30,3 +30,5 @@ describe("Get inital crimes", () => {
 			});
 	}).enableTimeouts(false);
 });
+
+describe("MongoDb Connection", function() {});
