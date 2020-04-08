@@ -26,7 +26,7 @@ router.get("/street", async (req, res, next) => {
 	}
 	res.render("main", { crimes: cdata });
 });
-
+ 
 // New get for crime app based on year search
 router.get("/year", async (req, res, next) => {
 	//Get Street to search for
