@@ -38,11 +38,11 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //load index layout and fill it with main html data into body
-app.get("/", async (req, res) => {
+app.get("/", async (req, res, next) => {
 	//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
 	//res.render('main', {layout : 'index'});
 	try {
-		cdata = await cr.getData(req.query.street);
+		cdata = await cr.getAllData();
 	} catch (e) {
 		//this will eventually be handled by your error handling middleware
 		next(e);
