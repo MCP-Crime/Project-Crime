@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const crimeSchema = mongoose.Schema({
     _id : mongoose.Schema.Types.ObjectId,
-    name : {type : String}
-});
+    crime_type_searched : {type : String, required : true}
+}); 
 
-module.exports = mongoose.model('crimes', crimeSchema);
+module.exports = mongoose.model('crime', crimeSchema);
