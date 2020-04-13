@@ -13,10 +13,10 @@
   <!--<img src="/images/chiskyline.jpg" alt="Chicago"> -->
   <div class="form-container">
     <h1>Chicago Crime Analysis</h1>
-    <form action="/gets/street" method="get">
+    <form action="/gets/block" method="get">
       <div>
-        <label for="street">Enter Street:</label>
-        <input id='searchstreet' type="text" id="street" name="street" value="">
+        <label for="block">Enter Street:</label>
+        <input id='searchstreet' type="text" id="block" name="block" value="">
         <input type="submit" value="Submit">
       </div> 
     </form>
@@ -29,7 +29,7 @@
       </div>
     </form>
 
-    <form action="gets/crimes" method="get">
+    {{!-- <form action="gets/crimeTypes" method="get">
       <div>
         <label for="crimeTypeSelect">Search By Crime Type:</label>
         {{!-- <select id="crimeTypeSelect">
@@ -41,6 +41,30 @@
         {{/each}}
       </select>
       <input type="submit" value="Submit">
+    </form> --}}
+    <form action="/gets/crimesByCrimeType" method="get">
+      <div>
+        <label for="crimeTypeSelect">Search By Crime Type:</label>
+        <select id="crimeTypeSelect">
+          <option value="">--Select type--</option>
+          <option value="THEFT">THEFT</option>
+          <option value="BATTERY">BATTERY</option>
+          <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+          <option value="NARCOTICS">NARCOTICS</option>
+          <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+          <option value="ASSAULT">ASSAULT</option>
+          <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+          <option value="BURGLARY">BURGLARY</option>
+          <option value="HOMICIDE">HOMICIDE</option>
+          <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+          <option value="CRIM SEXUAL ASSAULT">CRIM SEXUAL ASSAULT</option>
+          <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+          <option value="ROBBERY">ROBBERY</option>
+          <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+          <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION </option>
+          <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+        </select>
+      </div>
     </form>
   </div>
 </header>
