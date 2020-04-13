@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
 const Crime = require('../models/crimeModel');
 const Street = require('../models/streetModel');
 
@@ -29,27 +28,24 @@ router.post('/newCrime', (req, res, next) =>{
 });
 
 // Add new street
-router.post('/newStreet', (req, res, next) =>{
-    const newStreet = new Street({
-        _id : new mongoose.Types.ObjectId(),
-        date : req.body.date,
-        block_name_searched : req.body.block_name_searched,
-        block_name : req.body.block_name,
-        location_description :req.body.location_description
-    });
+// router.post('/newStreet', (req, res, next) =>{
+//     const blockData = new Street({
+//         _id : new mongoose.Types.ObjectId(),
+//         block_name_searched : req.body.block_name_searched
+//     });
 
-    // after connecting to db - we are saving it in db
-    newStreet.save().then(result =>{
-        res.status(201).json({
-            message : "New street added successfully",
-            StreetData : newStreet
-        });
-    }).catch(err =>{
-        console.log(err);
-        res.status(500).json({
-            error : err
-        });
-    });
-});
+//     // after connecting to db - we are saving it in db
+//     Street.save().then(result =>{
+//         res.status(201).json({
+//             message : "Block searched added to db successfully",
+//             blockData : blockData
+//         });
+//     }).catch(err =>{
+//         console.log(err);
+//         res.status(500).json({
+//             error : err
+//         });
+//     });
+// });
 
 module.exports = router;
