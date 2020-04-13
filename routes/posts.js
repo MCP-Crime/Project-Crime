@@ -11,10 +11,7 @@ router.post('/newCrime', (req, res, next) =>{
 	
 	const newCrime = new Crime({
 		_id : new mongoose.Types.ObjectId(),
-		date : req.body.date,
-		crime_name_searched : req.body.crime_name_searched,
-	    crime_type : req.body.crime_type,
-		crime_description :req.body.crime_description
+		name : req.body.name,
 	});
 	
 	// after connecting to db - we are saving it in db

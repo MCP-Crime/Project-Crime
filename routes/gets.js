@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const cr = require("../lib/streetData");
 const yr = require("../lib/yearData");
+const Crime = require("../models/crimeModel");
 
 var cdata;
 
@@ -12,7 +14,32 @@ router.use(bodyParser.json());
 // for parsing application/xwww-
 router.use(bodyParser.urlencoded({ extended: true }));
 
-// New inital get for crime app based on street search
+//get db data
+router.get("/crimes", async (req, res, next) => {
+	//Get crime data
+	Crime.find().exec().then(doc =>{
+		if(doc != null){
+			console.log(doc);
+			res.status(200).json({
+				cdata : doc
+			});
+			// res.render('main',{crimes : cdata});
+		}
+		else{
+			console.log(doc);
+			res.status(404).json({
+				message : "Crimes not found"
+			});
+		}
+	}).catch(err =>{		
+		console.log(err);
+		res.status(500).json({
+			error : err
+		});
+	});
+});
+
+// get for crime app based on street search
 router.get("/street", async (req, res, next) => {
 	//Get Street to search for
 	console.log("Search for street");
