@@ -85,7 +85,7 @@ router.get("/crimesByCrimeType", async (req, res, next) => {
 			res.status(500).json({
 				error : err
 			});
-		});
+		}); 
 
 	} catch (e) {
 		//this will eventually be handled by your error handling middleware
