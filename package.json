@@ -2,6 +2,10 @@
   "name": "project-crime",
   "version": "1.0.0",
   "description": "ITMD 567 Team Project Crime Analysis Inital Clone 2/15/2020",
+  "engines": {
+    "node": "12.16.2",
+    "npm": "6.14.4"
+  },
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
