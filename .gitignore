@@ -4997,4 +4997,4 @@ node_modules/terser-webpack-plugin/dist/TaskRunner.js
 node_modules/terser-webpack-plugin/dist/worker.js
 node_modules/through2/LICENSE.md
 node_modules/through2/README.md
-.env
+.envnode_modules
