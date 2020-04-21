@@ -93,4 +93,31 @@ router.get("/crimesByCrimeType", async (req, res, next) => {
 	}
 });
 
+
+// Add new crime
+router.post('/newCrime', (req, res, next) =>{
+	// _id is set to a mongodb generated objectId
+	
+	const newCrime = new Crime({
+		_id : new mongoose.Types.ObjectId(),
+		name : req.body.name,
+	});
+	
+	// after connecting to db - we are saving it in db
+	newCrime.save().then(result =>{
+		res.status(201).json({
+			message : "New crime added successfully",
+			CrimeData : newCrime
+		});
+	}).catch(err =>{
+		console.log(err);
+		res.status(500).json({
+			error : err
+		});
+	});
+});
+
+
+
+
 module.exports = router;
