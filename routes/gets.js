@@ -93,4 +93,38 @@ router.get("/crimesByCrimeType", async (req, res, next) => {
 	}
 });
 
+
+// pull are streets search for from mondo db collection streets
+router.get('/streets', (req, res, next) => {
+
+	Street.find()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving streets"
+      });
+    });
+
+});
+
+// pull are crimes search for from mondo db collection streets
+router.get('/crimes', (req, res, next) => {
+
+	Crime.find()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Crimes"
+      });
+    });
+
+});
+
+
 module.exports = router;
