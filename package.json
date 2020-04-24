@@ -10,7 +10,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "test": "mocha",
-    "docs": "rm -rf docs/*; jsdoc -p -c ./jsdoc.conf.json -r ./"
+    "docs": "rm -rf docs/*; jsdoc -p -c ./jsdoc.json -r ./"
   },
   "repository": {
     "type": "git",
