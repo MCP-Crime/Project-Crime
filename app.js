@@ -16,11 +16,29 @@
 * OF THIS SOFTWARE.
 */
 
+/** Requires the express module of the `express` library.
+* @requires express
+*/
 const express = require("express");
+/** Requires the mongoose module of the `mongoose` library.
+* @requires mongoose
+*/
 const mongoose = require("mongoose");
+/** Requires the bodyparser module of the `bodyparser` library.
+* @requires bodyparser
+*/
 const bodyparser = require("body-parser");
+/** Requires the handlebars module of the `handlebars` library.
+* @requires handlebars
+*/
 const handlebars = require("express-handlebars");
+/** Requires the connectDB module of the `connectDB` library.
+* @requires connectDB
+*/
 const connectDB = require("./lib/db");
+/** Requires the cr module of the `cr` library.
+* @requires cr
+*/
 const cr = require("./lib/streetData");
 
 const app = express();
