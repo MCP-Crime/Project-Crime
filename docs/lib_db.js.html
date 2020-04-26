@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: lib/crimeTypeData.js</title>
+    <title>JSDoc: Source: lib/db.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: lib/crimeTypeData.js</h1>
+    <h1 class="page-title">Source: lib/db.js</h1>
 
     
 
@@ -27,46 +27,32 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/** Crime type data module
-* @module lib/crimeTypeData
+* @module lib/db
 */
 
-/** Requires the node-fetch module of the `node-fetch` library.
-* @requires node-fetch
+/** Requires the mongoose module of the `mongoose` library.
+* @requires mongoose
 */
-const fetch = require("node-fetch");
+const mongoose = require("mongoose");
 
-/** Function to retrieve data by crime type
-* @function
-* @param {string} crimeType Type of crime to search for
-*/
+const connectDB = async () => {
+	try {
+		const conn = await mongoose.connect(process.env.DB_CONNECTION, {
+			useNewUrlParser: true,
+			useCreateIndex: true,
+			useFindAndModify: false,
+			useUnifiedTopology: true
+		});
 
-function getCrimeByCrimeType(crimeType) {
-	return new Promise(function(resolve, reject) {
-		fetch(
-			"https://data.cityofchicago.org/resource/ijzp-q8t2.json?$where=primary_type like" +
-				" '%25" +
-				crimeType +
-				"%25'"
-		)
-			.then((response) => {
-                console.log(response);
-				return response.json();
-			})
-			.then((data) => {
-				//Work with JSON data here
-				resolve(data);
-			})
-			.catch((err) => {
-				// Do something for an error here
-				console.log("NO Records Found");
-				reject(err);
-			});
-	}); 
-}
+		console.log(`MongoDB Connected: ${conn.connection.host}`);
+	} catch (error) {
+		console.error(error);
+		process.exit(1);
+	}
+};
 
-module.exports = {
-	getCrimeByCrimeType
-};</code></pre>
+module.exports = connectDB;
+</code></pre>
         </article>
     </section>
 
