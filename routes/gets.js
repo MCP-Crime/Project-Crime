@@ -1,3 +1,7 @@
+/** Crime gets routes module
+* @module routes/gets
+*/
+
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -110,6 +114,13 @@ router.get('/streets', (req, res, next) => {
 
 });
 
+/**
+ *  Retrieves a single file by id.
+ *  @param {object} req Get crime request
+ *  @param {object} res Get crime response
+ *  @param {object} next Get crime next
+ *  @returns {data} Crimes data
+ */
 // pull are crimes search for from mondo db collection streets
 router.get('/crimes', (req, res, next) => {
 
