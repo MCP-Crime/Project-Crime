@@ -45,8 +45,14 @@ const app = express();
 require("dotenv/config");
 
 //Import post routes
+/** Requires the postsRoute module of the `postsRoute` library.
+* @requires postsRoute
+*/
 const postsRoute = require("./routes/posts");
 //Import gets routes
+/** Requires the getsRoute module of the `getsRoute` library.
+* @requires getsRoute
+*/
 const getsRoute = require("./routes/gets");
 
 let cdata;
@@ -74,7 +80,8 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-//load index layout and fill it with main html data into body
+//load inital crime data fill it with main html data into body
+
 app.get("/", async (req, res, next) => {
 	//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
 	//res.render('main', {layout : 'index'});
