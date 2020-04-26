@@ -16,19 +16,43 @@
 * OF THIS SOFTWARE.
 */
 
+/** Requires the express module of the `express` library.
+* @requires express
+*/
 const express = require("express");
+/** Requires the mongoose module of the `mongoose` library.
+* @requires mongoose
+*/
 const mongoose = require("mongoose");
+/** Requires the bodyparser module of the `bodyparser` library.
+* @requires bodyparser
+*/
 const bodyparser = require("body-parser");
+/** Requires the handlebars module of the `handlebars` library.
+* @requires handlebars
+*/
 const handlebars = require("express-handlebars");
+/** Requires the connectDB module of the `connectDB` library.
+* @requires connectDB
+*/
 const connectDB = require("./lib/db");
+/** Requires the cr module of the `cr` library.
+* @requires cr
+*/
 const cr = require("./lib/streetData");
 
 const app = express();
 require("dotenv/config");
 
 //Import post routes
+/** Requires the postsRoute module of the `postsRoute` library.
+* @requires postsRoute
+*/
 const postsRoute = require("./routes/posts");
 //Import gets routes
+/** Requires the getsRoute module of the `getsRoute` library.
+* @requires getsRoute
+*/
 const getsRoute = require("./routes/gets");
 
 let cdata;
@@ -56,7 +80,8 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-//load index layout and fill it with main html data into body
+//load inital crime data fill it with main html data into body
+
 app.get("/", async (req, res, next) => {
 	//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
 	//res.render('main', {layout : 'index'});
