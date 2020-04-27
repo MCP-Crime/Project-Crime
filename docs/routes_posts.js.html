@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: lib/crimeTypeData.js</title>
+    <title>JSDoc: Source: routes/posts.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: lib/crimeTypeData.js</h1>
+    <h1 class="page-title">Source: routes/posts.js</h1>
 
     
 
@@ -26,47 +26,61 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** Crime type data module
-* @module lib/crimeTypeData
+            <pre class="prettyprint source linenums"><code>/** Crime gets routes module
+* @module routes/posts
 */
 
-/** Requires the node-fetch module of the `node-fetch` library.
-* @requires node-fetch
-*/
-const fetch = require("node-fetch");
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+const Crime = require('../models/crimeModel');
+const Street = require('../models/streetModel');
 
-/** Function to retrieve data by crime type
-* @function
-* @param {string} crimeType Type of crime to search for
-*/
+// Add new crime
+router.post('/newCrime', (req, res, next) =>{
+	// _id is set to a mongodb generated objectId
+	
+	const newCrime = new Crime({
+		_id : new mongoose.Types.ObjectId(),
+		name : req.body.name,
+	});
+	
+	// after connecting to db - we are saving it in db
+	newCrime.save().then(result =>{
+		res.status(201).json({
+			message : "New crime added successfully",
+			CrimeData : newCrime
+		});
+	}).catch(err =>{
+		console.log(err);
+		res.status(500).json({
+			error : err
+		});
+	});
+});
 
-function getCrimeByCrimeType(crimeType) {
-	return new Promise(function(resolve, reject) {
-		fetch(
-			"https://data.cityofchicago.org/resource/ijzp-q8t2.json?$where=primary_type like" +
-				" '%25" +
-				crimeType +
-				"%25'"
-		)
-			.then((response) => {
-                console.log(response);
-				return response.json();
-			})
-			.then((data) => {
-				//Work with JSON data here
-				resolve(data);
-			})
-			.catch((err) => {
-				// Do something for an error here
-				console.log("NO Records Found");
-				reject(err);
-			});
-	}); 
-}
+// Add new street
+// router.post('/newStreet', (req, res, next) =>{
+//     const blockData = new Street({
+//         _id : new mongoose.Types.ObjectId(),
+//         block_name_searched : req.body.block_name_searched
+//     });
 
-module.exports = {
-	getCrimeByCrimeType
-};</code></pre>
+//     // after connecting to db - we are saving it in db
+//     Street.save().then(result =>{
+//         res.status(201).json({
+//             message : "Block searched added to db successfully",
+//             blockData : blockData
+//         });
+//     }).catch(err =>{
+//         console.log(err);
+//         res.status(500).json({
+//             error : err
+//         });
+//     });
+// });
+
+module.exports = router;</code></pre>
         </article>
     </section>
 
