@@ -1,3 +1,7 @@
+/** Crime gets routes module
+* @module routes/posts
+*/
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');

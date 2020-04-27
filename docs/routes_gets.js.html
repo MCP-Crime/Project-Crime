@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: routes/gets.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: routes/gets.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** Crime gets routes module
+* @module routes/gets
+*/
+
+const express = require("express");
+const router = express.Router();
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
+const streetData = require("../lib/streetData");
+const yr = require("../lib/yearData");
+const crimeData = require("../lib/crimeTypeData");
+const Crime = require("../models/crimeModel");
+const Street = require('../models/streetModel');
+
+var cdata;
+
+// for parsing application/json
+router.use(bodyParser.json());
+
+// for parsing application/xwww-
+router.use(bodyParser.urlencoded({ extended: true }));
+
+// get for crime app based on street search
+router.get("/block", async (req, res, next) => {
+	//Get block to search for
+	console.log("Search for block");
+	console.log(req.query.block);
+
+	try {
+		cdata = await streetData.getStreetData(req.query.block);
+
+
+		const blockData = new Street({
+			_id : new mongoose.Types.ObjectId(),
+			block_searched : req.query.block
+		});
+	
+		// after connecting to db - we are saving it in db
+		blockData.save().then(result =>{
+			// after storing search data in db display data
+			res.render("main", { crimes: cdata });
+
+		}).catch(err =>{
+			console.log(err);
+			res.status(500).json({
+				error : err
+			});
+		});
+
+
+	} catch (e) {
+		//this will eventually be handled by your error handling middleware
+		next(e);
+	}
+});
+ 
+// New get for crime app based on year search
+router.get("/year", async (req, res, next) => {
+	//Get Street to search for
+	console.log("Search for year");
+	console.log(req.query.year);
+	try {
+		cdata = await yr.getYearData(req.query.year);
+	} catch (e) {
+		//this will eventually be handled by your error handling middleware
+		next(e);
+	}
+	res.render("main", { crimes: cdata });
+});
+
+// get for crime app based on street search
+router.get("/crimesByCrimeType", async (req, res, next) => {
+	//Get Street to search for
+	console.log("Search for crime by crime type");
+	try {
+		cdata = await crimeData.getCrimeByCrimeType(req.query.crimeType);
+
+		const crimeTypeSearched = new Crime({
+			_id : new mongoose.Types.ObjectId(),
+			crime_type_searched : req.query.crimeType
+		});
+
+		// after connecting to db - we are saving it in db
+		crimeTypeSearched.save().then(result =>{
+			// after storing search data in db display data
+			res.render("main", { crimes: cdata });
+		}).catch(err =>{
+			console.log(err);
+			res.status(500).json({
+				error : err
+			});
+		}); 
+
+	} catch (e) {
+		//this will eventually be handled by your error handling middleware
+		next(e);
+	}
+});
+
+
+// pull are streets search for from mondo db collection streets
+router.get('/streets', (req, res, next) => {
+
+	Street.find()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving streets"
+      });
+    });
+
+});
+
+/**
+ *  Retrieves a single file by id.
+ *  @param {object} req Get crime request
+ *  @param {object} res Get crime response
+ *  @param {object} next Get crime next
+ *  @returns {data} Crimes data
+ */
+// pull are crimes search for from mondo db collection streets
+router.get('/crimes', (req, res, next) => {
+
+	Crime.find()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Crimes"
+      });
+    });
+
+});
+
+
+module.exports = router;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-lib_crimeTypeData.html">lib/crimeTypeData</a></li><li><a href="module-lib_db.html">lib/db</a></li><li><a href="module-lib_streetData.html">lib/streetData</a></li><li><a href="module-lib_yearData.html">lib/yearData</a></li><li><a href="module-routes_gets.html">routes/gets</a></li><li><a href="module-routes_posts.html">routes/posts</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bodyparser">bodyparser</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cr">cr</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#getsRoute">getsRoute</a></li><li><a href="global.html#handlebars">handlebars</a></li><li><a href="global.html#mongoose">mongoose</a></li><li><a href="global.html#postsRoute">postsRoute</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Apr 27 2020 13:16:40 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
