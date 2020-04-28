@@ -77,7 +77,17 @@ router.get("/block", async (req, res, next) => {
 	}
 });
  
-// New get for crime app based on year search
+/**
+ * Route get crimes based on the date year selected
+ * @name get/year
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name year
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/year", async (req, res, next) => {
 	//Get Street to search for
 	console.log("Search for year");
