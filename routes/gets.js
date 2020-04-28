@@ -116,6 +116,7 @@ router.get('/streets', (req, res, next) => {
 
 /**
  *  Retrieves a single file by id.
+ *  @function
  *  @param {object} req Get crime request
  *  @param {object} res Get crime response
  *  @param {object} next Get crime next
