@@ -33,7 +33,17 @@ router.use(bodyParser.json());
 // for parsing application/xwww-
 router.use(bodyParser.urlencoded({ extended: true }));
 
-// get for crime app based on street search
+/**
+ * Route get crimes based on block to search for
+ * @name get/block
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name block
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/block", async (req, res, next) => {
 	//Get block to search for
 	console.log("Search for block");
@@ -81,7 +91,17 @@ router.get("/year", async (req, res, next) => {
 	res.render("main", { crimes: cdata });
 });
 
-// get for crime app based on street search
+/**
+ * Route get all crimes based on crime type selected
+ * @name get/crimesByCrimeType
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name crimesByCrimeType
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/crimesByCrimeType", async (req, res, next) => {
 	//Get Street to search for
 	console.log("Search for crime by crime type");
@@ -111,7 +131,7 @@ router.get("/crimesByCrimeType", async (req, res, next) => {
 });
 
 /**
- * Route serving login form.
+ * Route get crimes based on streets
  * @name get/streets
  * @function
  * @memberof module:routers/gets~router
@@ -137,7 +157,7 @@ router.get('/streets', (req, res, next) => {
 });
 
 /**
- * Route serving login form.
+ * Route get all crimes to display
  * @name get/crimes
  * @function
  * @memberof module:routers/gets~router
