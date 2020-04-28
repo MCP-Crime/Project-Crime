@@ -1,9 +1,22 @@
-/** Crime gets routes module
-* @module routes/gets
-*/
+/** Express gets router provides crime data pulls for the user
+ * @module routers/gets
+ * @requires express
+ */
 
+ /**
+ * express module
+ * @const
+ */
 const express = require("express");
+
+/**
+ * Express router to mount user related functions on.
+ * @type {object}
+ * @const
+ * @namespace router
+ */
 const router = express.Router();
+
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const streetData = require("../lib/streetData");
@@ -20,7 +33,17 @@ router.use(bodyParser.json());
 // for parsing application/xwww-
 router.use(bodyParser.urlencoded({ extended: true }));
 
-// get for crime app based on street search
+/**
+ * Route get crimes based on block to search for
+ * @name get/block
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name block
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/block", async (req, res, next) => {
 	//Get block to search for
 	console.log("Search for block");
@@ -54,7 +77,17 @@ router.get("/block", async (req, res, next) => {
 	}
 });
  
-// New get for crime app based on year search
+/**
+ * Route get crimes based on the date year selected
+ * @name get/year
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name year
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/year", async (req, res, next) => {
 	//Get Street to search for
 	console.log("Search for year");
@@ -68,7 +101,17 @@ router.get("/year", async (req, res, next) => {
 	res.render("main", { crimes: cdata });
 });
 
-// get for crime app based on street search
+/**
+ * Route get all crimes based on crime type selected
+ * @name get/crimesByCrimeType
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name crimesByCrimeType
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get("/crimesByCrimeType", async (req, res, next) => {
 	//Get Street to search for
 	console.log("Search for crime by crime type");
@@ -97,8 +140,17 @@ router.get("/crimesByCrimeType", async (req, res, next) => {
 	}
 });
 
-
-// pull are streets search for from mondo db collection streets
+/**
+ * Route get crimes based on streets
+ * @name get/streets
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name streets
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.get('/streets', (req, res, next) => {
 
 	Street.find()
@@ -115,14 +167,16 @@ router.get('/streets', (req, res, next) => {
 });
 
 /**
- *  Retrieves a single file by id.
- *  @function
- *  @param {object} req Get crime request
- *  @param {object} res Get crime response
- *  @param {object} next Get crime next
- *  @returns {data} Crimes data
+ * Route get all crimes to display
+ * @name get/crimes
+ * @function
+ * @memberof module:routers/gets~router
+ * @function
+ * @name crimes
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
  */
-// pull are crimes search for from mondo db collection streets
 router.get('/crimes', (req, res, next) => {
 
 	Crime.find()
