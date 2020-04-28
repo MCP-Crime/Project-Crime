@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: lib/streetData</title>
+    <title>JSDoc: Namespace: router</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: lib/streetData</h1>
+    <h1 class="page-title">Namespace: router</h1>
 
     
 
@@ -28,8 +28,8 @@
 
 <header>
     
-        
-            
+        <h2>
+            <span class="ancestors"><a href="module-routers_gets.html">routers/gets</a>~</span>router</h2>
         
     
 </header>
@@ -38,24 +38,10 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Crime type data module</p></div>
+            <div class="description"><p>Express router to mount user related functions on.</p></div>
         
 
         
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <dl class="details">
@@ -87,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_streetData.js.html">lib/streetData.js</a>, <a href="lib_streetData.js.html#line1">line 1</a>
+        <a href="routes_gets.js.html">routes/gets.js</a>, <a href="routes_gets.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -97,24 +83,6 @@
 
     
 </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         
@@ -134,72 +102,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="~fetch"><span class="type-signature">(inner, constant) </span>fetch<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    <p>Requires the node-fetch module of the <code>node-fetch</code> library.</p>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_streetData.js.html">lib/streetData.js</a>, <a href="lib_streetData.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -210,7 +112,7 @@
     
 
     
-    <h4 class="name" id="~getAllData"><span class="type-signature">(inner) </span>getAllData<span class="signature">(ananomus)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".crimes"><span class="type-signature">(static) </span>crimes<span class="signature">(req, res, middleware)</span><span class="type-signature"></span></h4>
     
 
     
@@ -218,7 +120,7 @@
 
 
 <div class="description">
-    <p>Get all inital crime data</p>
+    <p>Route serving login form.</p>
 </div>
 
 
@@ -254,10 +156,15 @@
 
         <tr>
             
-                <td class="name"><code>ananomus</code></td>
+                <td class="name"><code>req</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
             
             </td>
 
@@ -265,7 +172,53 @@
 
             
 
-            <td class="description last"><p>function</p></td>
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>middleware</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">callback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express middleware.</p></td>
         </tr>
 
     
@@ -306,7 +259,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_streetData.js.html">lib/streetData.js</a>, <a href="lib_streetData.js.html#line44">line 44</a>
+        <a href="routes_gets.js.html">routes/gets.js</a>, <a href="routes_gets.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -342,7 +295,7 @@
     
 
     
-    <h4 class="name" id="~getStreetData"><span class="type-signature">(inner) </span>getStreetData<span class="signature">(street)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".streets"><span class="type-signature">(static) </span>streets<span class="signature">(req, res, middleware)</span><span class="type-signature"></span></h4>
     
 
     
@@ -350,7 +303,7 @@
 
 
 <div class="description">
-    <p>Get Street to search for</p>
+    <p>Route serving login form.</p>
 </div>
 
 
@@ -386,13 +339,13 @@
 
         <tr>
             
-                <td class="name"><code>street</code></td>
+                <td class="name"><code>req</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -402,7 +355,53 @@
 
             
 
-            <td class="description last"><p>Street to seach for</p></td>
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>middleware</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">callback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express middleware.</p></td>
         </tr>
 
     
@@ -443,7 +442,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_streetData.js.html">lib/streetData.js</a>, <a href="lib_streetData.js.html#line16">line 16</a>
+        <a href="routes_gets.js.html">routes/gets.js</a>, <a href="routes_gets.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
