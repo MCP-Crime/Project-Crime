@@ -1,5 +1,5 @@
 /** Express post routes provides functions to write data to mongodb
- * @module routers/gets
+ * @module routers/posts
  * @requires express
  */
 
@@ -8,6 +8,13 @@
  * @const
  */
 const express = require('express');
+
+/**
+ * Express router to mount user related functions on.
+ * @type {object}
+ * @const
+ * @namespace router/posts
+ */
 const router = express.Router();
 const mongoose = require('mongoose');
 const Crime = require('../models/crimeModel');
@@ -16,9 +23,9 @@ const Street = require('../models/streetModel');
 
 /**
  * Route post crimes based on what users search for
- * @name post/newcrime
+ * @name post/newCrime
  * @function
- * @memberof module:routers/posts~router
+ * @memberof module:routers/posts~router/posts
  * @function
  * @name newcrime
  * @param {object} req - request object

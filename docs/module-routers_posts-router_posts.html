@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: lib/yearData</title>
+    <title>JSDoc: Namespace: router/posts</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: lib/yearData</h1>
+    <h1 class="page-title">Namespace: router/posts</h1>
 
     
 
@@ -28,8 +28,8 @@
 
 <header>
     
-        
-            
+        <h2>
+            <span class="ancestors"><a href="module-routers_posts.html">routers/posts</a>~</span>router/posts</h2>
         
     
 </header>
@@ -38,24 +38,10 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Crime type data module</p></div>
+            <div class="description"><p>Express router to mount user related functions on.</p></div>
         
 
         
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <dl class="details">
@@ -87,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_yearData.js.html">lib/yearData.js</a>, <a href="lib_yearData.js.html#line1">line 1</a>
+        <a href="routes_posts.js.html">routes/posts.js</a>, <a href="routes_posts.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -97,24 +83,6 @@
 
     
 </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         
@@ -134,72 +102,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="~fetch"><span class="type-signature">(inner, constant) </span>fetch<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    <p>Requires the node-fetch module of the <code>node-fetch</code> library.</p>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_yearData.js.html">lib/yearData.js</a>, <a href="lib_yearData.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -210,7 +112,7 @@
     
 
     
-    <h4 class="name" id="~getYearData"><span class="type-signature">(inner) </span>getYearData<span class="signature">(year)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".newcrime"><span class="type-signature">(static) </span>newcrime<span class="signature">(req, res, middleware)</span><span class="type-signature"></span></h4>
     
 
     
@@ -218,7 +120,7 @@
 
 
 <div class="description">
-    <p>Get crime data based on year</p>
+    <p>Route post crimes based on what users search for</p>
 </div>
 
 
@@ -254,13 +156,13 @@
 
         <tr>
             
-                <td class="name"><code>year</code></td>
+                <td class="name"><code>req</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -270,7 +172,53 @@
 
             
 
-            <td class="description last"><p>Search for data based on year</p></td>
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>middleware</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">callback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express middleware.</p></td>
         </tr>
 
     
@@ -311,7 +259,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_yearData.js.html">lib/yearData.js</a>, <a href="lib_yearData.js.html#line16">line 16</a>
+        <a href="routes_posts.js.html">routes/posts.js</a>, <a href="routes_posts.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
