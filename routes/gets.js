@@ -1,4 +1,4 @@
-/** Express gets router provides crime data pulls for the user
+/** Express gets routes provides crime data pulls for the user
  * @module routers/gets
  * @requires express
  */

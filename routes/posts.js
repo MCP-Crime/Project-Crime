@@ -1,14 +1,37 @@
-/** Crime gets routes module
-* @module routes/posts
-*/
+/** Express post routes provides functions to write data to mongodb
+ * @module routers/posts
+ * @requires express
+ */
 
+ /**
+ * express module
+ * @const
+ */
 const express = require('express');
+
+/**
+ * Express router to mount user related functions on.
+ * @type {object}
+ * @const
+ * @namespace router/posts
+ */
 const router = express.Router();
 const mongoose = require('mongoose');
 const Crime = require('../models/crimeModel');
 const Street = require('../models/streetModel');
 
-// Add new crime
+
+/**
+ * Route post crimes based on what users search for
+ * @name post/newCrime
+ * @function
+ * @memberof module:routers/posts~router/posts
+ * @function
+ * @name newcrime
+ * @param {object} req - request object
+ * @param {object}	res - request object
+ * @param {callback} middleware - Express middleware.
+ */
 router.post('/newCrime', (req, res, next) =>{
 	// _id is set to a mongodb generated objectId
 	
