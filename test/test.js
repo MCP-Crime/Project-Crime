@@ -17,7 +17,7 @@ describe("MongoDb Connection", function() {
 });
 
 describe("Get inital crimes", () => {
-	it("Should get inital crime", async () => {
+	it("Should get inital crime data", async () => {
 		await fetch(
 			"https://data.cityofchicago.org/resource/ijzp-q8t2.json?$limit=1"
 		)
