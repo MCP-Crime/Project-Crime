@@ -20,7 +20,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const streetData = require("../lib/streetData");
-const yr = require("../lib/yearData");
 const crimeData = require("../lib/crimeTypeData");
 const Crime = require("../models/crimeModel");
 const Street = require('../models/streetModel');
@@ -88,18 +87,6 @@ router.get("/block", async (req, res, next) => {
  * @param {object}	res - request object
  * @param {callback} middleware - Express middleware.
  */
-router.get("/year", async (req, res, next) => {
-	//Get Street to search for
-	console.log("Search for year");
-	console.log(req.query.year);
-	try {
-		cdata = await yr.getYearData(req.query.year);
-	} catch (e) {
-		//this will eventually be handled by your error handling middleware
-		next(e);
-	}
-	res.render("main", { crimes: cdata });
-});
 
 /**
  * Route get all crimes based on crime type selected

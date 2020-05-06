@@ -12,7 +12,7 @@
 <header class='main-header'>
   <!--<img src="/images/chiskyline.jpg" alt="Chicago"> -->
   <div class="form-container">
-    <h1>Chicago Crime Analysis</h1>
+    <h1 id="appHead">Chicago Crime Analysis</h1>
     <form action="/gets/block" method="get">
       <div>
         <label for="block">Enter Street:</label>
@@ -21,25 +21,6 @@
       </div> 
     </form>
 
-    <form action="/gets/year" method="get">
-      <div>
-        <label for="date">Select Date:</label>
-        <input id='date' type="number" min="1900" max="2099" step="1" name="year" value=""/>
-        <input type="submit" value="Submit">
-      </div>
-    </form>
-
-    {{!-- <form action="gets/crimeTypes" method="get">
-      <div>
-        <label for="crimeTypeSelect">Search By Crime Type:</label>
-      <select name="crimeType" class="crimeType" id="crimeType">
-        {{#each crimes}}
-            <option>{{this.name}}</option>
-        {{/each}}
-      </select>
-      <input type="submit" value="Submit">
-    </form> --}}
- 
     <form action="/gets/crimesByCrimeType" method="get">
       <div>
         <label for="crimeType">Search By Crime Type:</label>

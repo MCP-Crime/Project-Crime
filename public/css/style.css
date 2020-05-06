@@ -235,3 +235,6 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+#appHead{
+	margin-bottom : 20px !important;
+}
